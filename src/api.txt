@@ -1,0 +1,147 @@
+API should look like the following --
+
+{
+  homePage: {
+    banner: {
+      title: "We create and renovate hair style trends",
+      image: '',
+      subtitle: '',
+      button: ''
+    },
+    about: {
+      title: "About",
+      image: '',
+      subtitle: '',
+      button: ''
+    },
+    services: {
+      title: "Services",
+      image: '',
+      subtitle: '',
+      button: ''
+    }
+  },
+  aboutPage: {
+    main: {
+      title: 'About More'
+    },
+    features: {
+      feature1: {
+        title: 'The hidden technique of coloring',
+        image: '',
+        subtitle: '',
+        button: ''
+      },
+      feature2: {
+        title: 'The hidden technique of coloring',
+        image: '',
+        subtitle: '',
+        button: ''
+      }
+    },
+    bios: {
+      person1: {
+        title: 'The hidden technique of coloring',
+        image: '',
+        subtitle: '',
+        button: ''
+      }
+    },
+    cta: {
+      title: 'The hidden technique of coloring',
+      subtitle: '',
+      button: ''
+    }
+  },
+  servicesPage: {
+    main: {
+      title: '',
+      subtitle: '',
+    },
+    features: {
+      feature1: {
+        title: 'The hidden technique of coloring',
+        image: '',
+        subtitle: '',
+        link: ''
+      },
+      feature2: {
+        title: 'The hidden technique of coloring',
+        image: '',
+        subtitle: '',
+        link: ''
+      },
+      feature1: {
+        title: 'The hidden technique of coloring',
+        image: '',
+        subtitle: '',
+        link: ''
+      },
+      feature2: {
+        title: 'The hidden technique of coloring',
+        image: '',
+        subtitle: '',
+        link: ''
+      }
+    }
+  },
+  singlePage: {
+    main: {
+      title: '',
+      subtitle: '',
+      video: '',
+      image: ''
+    },
+    hero2: {
+      title: 'The hidden technique of coloring',
+      image: '',
+      subtitle: '',
+      button: ''
+    },
+    features2: {
+      TBD: ''
+    },
+    comments: {
+      title: 'The hidden technique of coloring',
+      subtitle: '',
+      button: ''
+    }
+  },
+  productsPage: {
+    main: {
+      title: 'The hidden technique of coloring',
+      subtitle: '',
+    }
+  },
+  galleryPage: {
+    main: {
+      title: 'The hidden technique of coloring',
+      subtitle: '',
+    }
+  },
+  contactPage: {
+    main: {
+      title: 'Contact',
+      subtitle: '',
+    }
+  },
+  singleProductPage: {
+    main: {
+      title: 'The hidden technique of coloring',
+      subtitle: '',
+    }
+  },
+}
+
+// Sample API call to Contentful for dynamic content
+const contentful = require('contentful')
+
+const client = contentful.createClient({
+  space: '<space_id>',
+  environment: '<environment_id>', // defaults to 'master' if not set
+  accessToken: '<content_delivery_api_key>'
+})
+
+client.getEntry('<entry_id>')
+.then((entry) => console.log(entry))
+.catch(console.error)
