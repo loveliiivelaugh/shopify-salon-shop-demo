@@ -123,7 +123,7 @@ function AuthForm(props) {
       )}
 
       <Button
-        variant="primary"
+        variant="primary2"
         block={true}
         size={props.inputSize}
         type="submit"

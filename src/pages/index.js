@@ -20,24 +20,24 @@ function IndexPage(props) {
   return (
     <>
       <HeroSection
-        bg="primary"
-        textColor="primary"
+        bg="primary1"
+        textColor="light"
         size="lg"
-        bgImage="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
+        bgImage={data.homePage.banner.image}
         bgImageOpacity={1}
         // title="We Create And Renovate Hair Style Trends"
         title={data.homePage.banner.title}
         subtitle={data.homePage.banner.subtitle}
         buttonText={data.homePage.banner.button}
-        buttonColor="light"
+        buttonColor="primary4"
         buttonOnClick={() => {
           // Navigate to pricing page
           router.push("/pricing");
         }}
       />
       <HeroSection2
-        bg="white"
-        textColor="dark"
+        bg="primary4"
+        textColor="light"
         size="md"
         bgImage=""
         bgImageOpacity={1}
@@ -46,7 +46,7 @@ function IndexPage(props) {
         button={data.homePage.about.button}
       />
       <CtaSection
-        bg="primary"
+        bg="primary3"
         textColor="light"
         size="sm"
         bgImage=""
@@ -61,8 +61,8 @@ function IndexPage(props) {
         }}
       />
       <ContentCardsSection
-        bg="white"
-        textColor="dark"
+        bg="primary1"
+        textColor="light"
         size="md"
         bgImage=""
         bgImageOpacity={1}
@@ -79,14 +79,14 @@ function IndexPage(props) {
         subtitle="All the features you need to move faster"
       /> */}
       <StatsSection
-        bg="white"
-        textColor="dark"
+        bg="primary4"
+        textColor="light"
         size="md"
         bgImage=""
         bgImageOpacity={1}
       />
       <TestimonialsSection
-        bg="white"
+        bg="primary1"
         textColor="dark"
         size="md"
         bgImage=""
@@ -95,15 +95,15 @@ function IndexPage(props) {
         subtitle=""
       />
       <NewsletterSection
-        bg="light"
-        textColor="dark"
+        bg="primary4"
+        textColor="light"
         size="md"
         bgImage=""
         bgImageOpacity={1}
         title={data.homePage.newsletter.title}
         subtitle={data.homePage.newsletter.subtitle}
         buttonText={data.homePage.newsletter.buttonText}
-        buttonColor="primary"
+        buttonColor="primary2"
         inputPlaceholder={data.homePage.newsletter.inputPlaceholder}
         subscribedMessage={data.homePage.newsletter.subscribedMessage}
       />

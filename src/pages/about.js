@@ -49,10 +49,10 @@ function AboutPage(props) {
         subtitle="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum consequatur numquam aliquam tenetur ad amet inventore hic beatae, quas accusantium perferendis sapiente explicabo, corporis totam!"
       /> */}
       <StatsSection
-        bg="light"
+        bg="primary4"
         textColor="light"
         size="sm"
-        bgImage={stats.bgImage}
+        bgImage=""
         bgImageOpacity={stats.bgImageOpacity}
       />
       <TeamBiosSection
@@ -66,7 +66,7 @@ function AboutPage(props) {
         items={bios}
       />
       <CtaSection
-        bg="primary"
+        bg="primary4"
         textColor="light"
         size="sm"
         bgImage=""
@@ -74,7 +74,7 @@ function AboutPage(props) {
         title={cta.title}
         subtitle={cta.subtitle}
         buttonText={cta.button}
-        buttonColor="light"
+        buttonColor="primary2"
         buttonOnClick={() => {
           // Navigate to pricing page
           router.push("/pricing");

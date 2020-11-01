@@ -1,7 +1,7 @@
 // Navigation and nav bar
 export const navData = {
   logo: "https://www.graphicsprings.com/filestorage/stencils/08f0ce2417f5de0aa02436535214a9f4.png?width:500&height:500",
-  logoTitle: "Shayla's Shop",
+  logoTitle: "Salon Shop",
   navLabel1: 'Home',
   navLabel2: 'About',
   navLabel3: 'Services',
@@ -12,7 +12,7 @@ export const navData = {
   navLabel8: 'Dashboard',
   navLabel9: 'Settings',
   navLabel10: 'Sign out',
-  navLabel11: 'Sign in',
+  navLabel11: 'Sign in'
 }
 
 // Home Page
@@ -20,7 +20,7 @@ export const indexPageData = {
   homePage: {
     banner: {
       title: "We create and renovate hair style trends",
-      image: '',
+      image: "hhttps://cdn.pixabay.com/photo/2016/05/27/10/04/woman-1419365__480.png",
       subtitle: 'This landing page is perfect for showing off your awesome product and driving people to schedule appointments. Conversions ! Sales ! (:',
       button: 'Book an Appointment'
     },
@@ -65,7 +65,6 @@ export const aboutPageData = {
           "Write some lovely things here about how you specialize in a certain method in your industry. Integer ornare neque mauris, ac vulputate lacus venenatis et. Pellentesque ut ultrices purus. Integer ornare neque mauris, ac vulputate lacus venenatis et. Pellentesque ut ultrices purus.",
         image: "https://images.unsplash.com/photo-1554519515-242161756769?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
         subtitle: '',
-        button: ''
       },
       {
         name: 'feature2',
@@ -79,7 +78,7 @@ export const aboutPageData = {
       }
     ],
     stats: {
-      bgImage: "https://images.unsplash.com/photo-1510115950941-b7c06c744133?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
+      bgImage: "",
       // Enter a number between 0 - 1 for background opacity 
       bgImageOpacity: 1
     },
@@ -87,7 +86,7 @@ export const aboutPageData = {
       person1: {
         title: "Meet the Artist",
         avatar: "https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?b=1&k=6&m=1223671392&s=612x612&w=0&h=5VMcL3a_1Ni5rRHX0LkaA25lD_0vkhFsb1iVm1HKVSQ=",
-        name: "Shayla",
+        name: "Salon Artist",
         role: "Salon Artist",
         bio:
           "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum consequatur numquam aliquam tenetur ad amet inventore hic beatae, quas accusantium perferendis sapiente explicabo.",
@@ -140,7 +139,7 @@ export const servicesPageData = {
   ]
 };
 
-// Single Page / Featured item/product Page
+// Single Page / Featured item / product Page
 export const singlePageData = {
   main: {
     title: "Your featured client/cut/style/etc.",
@@ -181,6 +180,44 @@ export const galleryPageData = {
     subtitle: '',
   },
   items: [
+    {
+      name: '1',
+      image:'https://i.imgur.com/FCollpb.jpg'
+    },
+    {
+      name: '2',
+      image:'https://i.imgur.com/2TdTJgL.jpg'
+    },
+    {
+      name: '3',
+      image: 'https://i.imgur.com/9CQs7g6.jpg'
+    },
+    {
+      name: '4',
+      image: 'https://i.imgur.com/k5uSKnW.jpg'
+    },
+    {
+      name: '5',
+      image: 'https://i.imgur.com/lWfyTfC.jpg'
+    },
+    {
+      name: '6',
+      image: 'https://i.imgur.com/Mq2IuFN.jpg'
+    },
+    {
+      name: '7',
+      image: 'https://i.imgur.com/MePjRUg.jpg'
+    },
+    {
+      name: '8',
+      image: 'https://i.imgur.com/d6QpEEA.jpg'
+    },
+    {
+      name: '9',
+      image: 'https://i.imgur.com/7GlMDmk.jpg'
+    },
+
+
     {
       name: '@',
       image:'https://images.unsplash.com/photo-1523264766116-1e09b3145b84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60'
@@ -249,8 +286,9 @@ export const singleProductPageData = {
   }
 };
 
+// Footer 
 export const footerData = {
   description:"Making sure you're beautiful every step of the way!",
-  copyright:"© 2020 Shayla's Hair and Beauty Salon Shop",
+  copyright:"© 2020 Hair and Beauty Salon Shop",
   logo:"https://www.graphicsprings.com/filestorage/stencils/08f0ce2417f5de0aa02436535214a9f4.png?width=500&height=500"
 }

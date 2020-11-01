@@ -3,14 +3,7 @@ import Section from "./Section";
 import Container from "react-bootstrap/Container";
 import SectionHeader from "./SectionHeader";
 
-import ProductsSection from "./staging/components/ProductsSection";
-
-import Client from 'shopify-buy';
-
-const client = Client.buildClient({
-    storefrontAccessToken: '48733655b3ce7fcfee95c301feb94846',
-    domain: 'michael-io.myshopify.com'
-});
+import Products from "./staging/components/Products";
 
 function UsersSection(props) {
   return (
@@ -30,7 +23,7 @@ function UsersSection(props) {
           className="text-center"
         />
       </Container>
-      <ProductsSection />
+      <Products/>
     </Section>
   );
 }

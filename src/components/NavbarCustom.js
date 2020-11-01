@@ -1,19 +1,81 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Navbar from "react-bootstrap/Navbar";
+import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import { LinkContainer } from "react-router-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Dropdown from "react-bootstrap/Dropdown";
-import CarouselSection from "./CarouselSection";
+// hooks
 import { useAuth } from "./../util/auth.js";
+import { useShopify } from "../hooks";
+import { useRouter } from "./../util/router.js";
 
-import Cart from './staging/components/Cart'
-
-import { FaShoppingCart } from "react-icons/md"
+import { MdShoppingCart } from "react-icons/md"
+import './staging/components/Cart.scss'
 
 function NavbarCustom(props) {
+  const router = useRouter();
   const auth = useAuth();
+  //todo go through this useShopify functionality and remove whats not used
+  const {
+		cartStatus,
+		closeCart,
+		openCart,
+		checkoutState,
+		setCount,
+	} = useShopify()
+
+	function handleOpen(e) {
+    e.preventDefault()
+    if (cartStatus === false) {
+      console.log("redirect to store page")
+      router.push("/products")
+    }
+    console.log(checkoutState.webUrl)
+    console.log("handleOpen function fired.")
+    setTimeout(() => {
+      openCart()
+    }, 1200)
+    console.log(cartStatus)
+	}
+
+	function handleClose(e) {
+		e.preventDefault()
+		closeCart()
+	}
+
+	function openCheckout(e) {
+		e.preventDefault()
+		// window.open(checkoutState.webUrl) // opens checkout in a new window
+		window.location.replace(checkoutState.webUrl) // opens checkout in same window
+	}
+
+	useEffect(() => {
+		const button = document.getElementById("cart-button")
+		if (cartStatus === true) {
+			// button.classList.add("hide")
+		} else {
+			// button.classList.remove("hide")
+		}
+
+		function getCount() {
+			let lineItems =
+				checkoutState.lineItems && checkoutState.lineItems.length > 0
+					? checkoutState.lineItems
+					: []
+			let count = 0
+			lineItems.forEach((item) => {
+				count += item.quantity
+				return count
+			})
+
+			setCount(count)
+		}
+
+		getCount()
+	}, [cartStatus, checkoutState])
+
 
   return (
     <>
@@ -41,30 +103,18 @@ function NavbarCustom(props) {
                   <Nav.Link active={false}>{props.navLabel1}</Nav.Link>
                 </LinkContainer>
               </Nav.Item>
-              <Nav.Item>
-                <LinkContainer to="/about">
-                  <Nav.Link active={false}>{props.navLabel2}</Nav.Link>
-                </LinkContainer>
-              </Nav.Item>
-              <NavDropdown id="dropdown" title="Dropdown" alignRight={true}>
-                <LinkContainer to="/services">
-                  <NavDropdown.Item active={false}>{props.navLabel3}</NavDropdown.Item>
-                </LinkContainer>
-
-                <LinkContainer to="/single">
-                  <NavDropdown.Item active={false}>{props.navLabel4}</NavDropdown.Item>
-                </LinkContainer>
-
-                <Dropdown.Divider />
-
+              <NavDropdown id="dropdown" title="Shop" alignRight={true}>
                 <LinkContainer to="/products">
                   <NavDropdown.Item active={false}>{props.navLabel5}</NavDropdown.Item>
                 </LinkContainer>
-
+              <Dropdown.Divider />
+                <LinkContainer to="/gallery">
+                  <NavDropdown.Item active={false}>{props.navLabel6}</NavDropdown.Item>
+                </LinkContainer>
               </NavDropdown>
               <Nav.Item>
-                <LinkContainer to="/gallery">
-                  <Nav.Link active={false}>{props.navLabel6}</Nav.Link>
+                <LinkContainer to="/about">
+                  <Nav.Link active={false}>{props.navLabel2}</Nav.Link>
                 </LinkContainer>
               </Nav.Item>
               <Nav.Item>
@@ -108,28 +158,14 @@ function NavbarCustom(props) {
                   </LinkContainer>
                 </Nav.Item>
               )}
-              {/* <Cart /> */}
-              {/* <FaShoppingCart /> */}
+
+              <Button id="cart-button" variant="link" className="shopcart-button" onClick={(e) => handleOpen(e)}>
+                <MdShoppingCart/>
+              </Button>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      {/* <CarouselSection
-        items={[
-          {
-            image: "http://source.unsplash.com/7v_lSDRaOO0/1200x600",
-            caption: "Caption for the first image",
-          },
-          {
-            image: "http://source.unsplash.com/PvCO2IXlXBs/1200x600",
-            caption: "Caption for the second image",
-          },
-          {
-            image: "http://source.unsplash.com/KgjcndVr7tU/1200x600",
-            caption: "Caption for the third image",
-          },
-        ]}
-      /> */}
     </>
   );
 }

@@ -26,7 +26,7 @@ function FaqPage(props) {
         title="Ready to get started?"
         subtitle=""
         buttonText="Get Started"
-        buttonColor="light"
+        buttonColor="primary4"
         buttonOnClick={() => {
           // Navigate to pricing page
           router.push("/pricing");

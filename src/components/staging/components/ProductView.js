@@ -5,6 +5,8 @@ import { useShopify } from "./../../../hooks"
 import Button from 'react-bootstrap/Button'
 import './Product.scss'
 
+import MyCarousel from "./Carousel";
+
 export default (props) => {
 	const {
 		product,
@@ -48,19 +50,15 @@ export default (props) => {
 			<Link to={"/products"}>
 				<Button className="button" >Back to the shop</Button>
 			</Link>
-				<div className="Images">
-					{product.images &&
-						product.images.map((image, i) => {
-							return (
-								<img
-									key={image.id + i}
-									src={image.src}
-									alt={`${product.title} product shot`}
-									width="300px"
-								/>
-							)
-						})}
-				</div>
+				<center>
+					{ product.images &&
+						<div>
+							<MyCarousel images={product.images} />
+							<br />
+							{product.images.length} images
+						</div>
+					}
+				</center>
 				<div className="Product__info">
 					<h2 className="Product__title2">{product.title}</h2>
 					<ul className="Product__description">

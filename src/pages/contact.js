@@ -17,7 +17,7 @@ function ContactPage() {
       title={data.title}
       subtitle={data.subtitle}
       buttonText={data.button}
-      buttonColor="primary"
+      buttonColor="primary2"
       showNameField={true}
       showEmailField={true}
       inputSize="md"

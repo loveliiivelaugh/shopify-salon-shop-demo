@@ -29,7 +29,7 @@ export default (props) => {
 					className="text-center"
 				/>
 				<h1>{data.title}</h1>
-				<div className="Products-wrapper">
+				<div>
 					<Product history={props.history} />
 				</div>
 			</Container>

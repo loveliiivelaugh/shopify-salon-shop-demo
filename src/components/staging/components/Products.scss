@@ -1,9 +1,6 @@
-.Product-wrapper {
-	max-width: 900px;
-	margin: 40px auto 0;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+.Products-wrapper {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .Product {

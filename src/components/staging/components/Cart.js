@@ -6,6 +6,8 @@ import { MdShoppingCart, MdRemoveShoppingCart } from "react-icons/md"
 import './Cart.scss'
 
 export default (props) => {
+	// console.log("I am messages from the cart!")
+	// console.log(props.checkoutState)
 	const {
 		cartStatus,
 		closeCart,
@@ -31,12 +33,12 @@ export default (props) => {
 	}
 
 	useEffect(() => {
-		const button = document.querySelector("button.App__view-cart")
-		if (cartStatus === true) {
-			button.classList.add("hide")
-		} else {
-			button.classList.remove("hide")
-		}
+	// 	const button = document.querySelector("button.App__view-cart")
+	// 	if (cartStatus === true) {
+	// 		button.classList.add("hide")
+	// 	} else {
+	// 		button.classList.remove("hide")
+	// 	}
 
 		function getCount() {
 			let lineItems =
@@ -66,10 +68,10 @@ export default (props) => {
 
 					 */}
 					
-					<button className="App__view-cart" onClick={(e) => handleOpen(e)}>
-						<MdShoppingCart />
-					</button>
-					
+				{/* <button className="App__view-cart" onClick={(e) => handleOpen(e)}>
+					<MdShoppingCart />
+				</button> */}
+				
 				</div>
 				<header className="Cart__header">
 					<h2>Your cart</h2>

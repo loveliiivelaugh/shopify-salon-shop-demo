@@ -16,6 +16,8 @@
 }
 .Product__description {
 	font-size: 20px;
+	text-decoration: none ;
+	list-style: none;
 }
 
 .Product__title2 {
@@ -27,4 +29,5 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	margin-top: 30px;
 }

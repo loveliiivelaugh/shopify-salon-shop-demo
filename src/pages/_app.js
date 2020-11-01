@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./../styles/global.scss";
 import NavbarCustom from "./../components/NavbarCustom";
 import IndexPage from "./index";
@@ -12,7 +12,6 @@ import PurchasePage from "./purchase";
 import AuthPage from "./auth";
 import ServicesPage from "./services";
 import ProductsPage from "./products";
-import ProductView from "../components/staging/components/ProductView";
 import SinglePage from "./single";
 import GalleryPage from "./gallery";
 import { Switch, Route, Router } from "./../util/router.js";
@@ -23,17 +22,37 @@ import "./../util/analytics.js";
 import { ProvideAuth } from "./../util/auth.js";
 import { database } from "firebase";
 
+import Cart from "../components/staging/components/Cart"
+import Products from "../components/staging/components/Products"
+import ProductView from "../components/staging/components/ProductView";
+
+import { useShopify } from "../hooks"
 
 // data
 import { navData, footerData } from '../util/cms';
 
 function App(props) {
+    const {
+      createShop,
+      createCheckout,
+      fetchProducts,
+      // fetchCollection,
+    } = useShopify()
+
+    useEffect(() => {
+      createShop()
+      fetchProducts()
+      createCheckout()
+      // fetchCollection()
+    }, [])
+
+
   return (
     <ProvideAuth>
       <Router>
         <>
           <NavbarCustom
-            bg="primary"
+            bg="primary3"
             variant="dark"
             expand="md"
             logo={navData.logo}
@@ -78,6 +97,10 @@ function App(props) {
 
             <Route exact path="/gallery" component={GalleryPage} />
 
+            <Route path="/cart" component={Cart} />
+            
+            <Route path="/products" component={Products} />
+
             <Route path="/Product/:productId" component={ProductView} />
 
             <Route
@@ -90,8 +113,8 @@ function App(props) {
           </Switch>
 
           <Footer
-            bg="white"
-            textColor="dark"
+            bg="primary3"
+            textColor="light"
             size="md"
             bgImage=""
             bgImageOpacity={1}

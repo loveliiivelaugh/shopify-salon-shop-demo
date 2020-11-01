@@ -3,10 +3,6 @@ import Section from "./Section";
 import Container from "react-bootstrap/Container";
 import SectionHeader from "./SectionHeader";
 
-
-import Button from 'react-bootstrap/Button';
-import { Link } from "./../util/router.js";
-
 function HeroSection2(props) {
   return (
     <Section
@@ -25,10 +21,9 @@ function HeroSection2(props) {
           size={1}
           spaced={true}
           className="text-center"
+          button={props.button}
         />
-        <Link to="/about">
-          <Button>{props.button}</Button>
-        </Link>
+        
       </Container>
     </Section>
   );

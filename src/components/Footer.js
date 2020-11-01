@@ -27,7 +27,7 @@ function Footer(props) {
                   alt="Logo"
                   height="45"
                 />
-                <h4>Shayla's Salon Shop</h4>
+                <h4>Salon Shop</h4>
               </div>
             </Link>
 
@@ -48,9 +48,6 @@ function Footer(props) {
                   <h5>Product</h5>
                   <ul className="list-unstyled">
                     <li>
-                      <Link to="/services">Services</Link>
-                    </li>
-                    <li>
                       <Link to="/products">Shop</Link>
                     </li>
                     <li>
@@ -66,15 +63,6 @@ function Footer(props) {
                     </li>
                     <li>
                       <Link to="/contact">Contact</Link>
-                    </li>
-                    <li>
-                      <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href="https://medium.com"
-                      >
-                        Blog
-                      </a>
                     </li>
                   </ul>
                 </Col>
